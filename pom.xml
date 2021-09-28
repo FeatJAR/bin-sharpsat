@@ -11,82 +11,56 @@
 	<description>Precompiled binaries for the sharpSAT Solver</description>
 	<url>https://github.com/skrieter/sharpsat-native</url>
 
-	<profiles>
-		<profile>
-			<id>os-unix</id>
-			<activation>
-				<os>
-					<family>Unix</family>
-				</os>
-			</activation>
-			<properties>
-				<lib.dir>unix</lib.dir>
-			</properties>
-		</profile>
-		<profile>
-			<id>os-windows</id>
-			<activation>
-				<os>
-					<family>Windows</family>
-				</os>
-			</activation>
-			<properties>
-				<lib.dir>win</lib.dir>
-			</properties>
-		</profile>
-		<profile>
-			<id>os-mac</id>
-			<activation>
-				<os>
-					<family>Mac</family>
-				</os>
-			</activation>
-			<properties>
-				<lib.dir>mac</lib.dir>
-			</properties>
-		</profile>
-	</profiles>
-
 	<build>
 		<plugins>
 			<plugin>
-				<!-- The artifact is stored as tar.gz archive, because the contained file must keep its executable flag -->
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.8</version>
+				<groupId>com.googlecode.cmake-maven-project</groupId>
+				<artifactId>cmake-maven-plugin</artifactId>
+				<version>3.19.2-b1</version>
 				<executions>
 					<execution>
-						<id>attach-artifacts</id>
-						<phase>package</phase>
+						<id>cmake-generate</id>
+						<phase>compile</phase>
 						<goals>
-							<goal>attach-artifact</goal>
+							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<artifacts>
-								<artifact>
-									<file>${basedir}/${lib.dir}/sharpSAT.tar.gz</file>
-									<type>tar.gz</type>
-								</artifact>
-							</artifacts>
+							<sourcePath>sharpSAT</sourcePath>
+							<targetPath>sharpSAT</targetPath>
+						</configuration>
+					</execution>
+					<execution>
+						<id>cmake-compile</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<projectDirectory>sharpSAT</projectDirectory>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-help-plugin</artifactId>
-				<version>3.2.0</version>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.3.0</version>
+				<configuration>
+					<descriptors>
+						<descriptor>assembly-descriptor.xml</descriptor>
+					</descriptors>
+				</configuration>
 				<executions>
 					<execution>
-						<id>show-profiles</id>
-						<phase>compile</phase>
+						<id>make-assembly</id>
+						<phase>package</phase>
 						<goals>
-							<goal>active-profiles</goal>
+							<goal>single</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
+
 		</plugins>
 	</build>
 
