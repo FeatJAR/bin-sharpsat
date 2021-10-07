@@ -7,7 +7,7 @@
 	<includeBaseDirectory>false</includeBaseDirectory>
 	<fileSets>
 		<fileSet>
-			<directory>${project.basedir}</directory>
+			<directory>${project.basedir}/sharpSAT</directory>
 			<includes>
 				<include>sharpSAT</include>
 				<include>sharpSAT.exe</include>
