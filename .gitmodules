@@ -1,3 +1,4 @@
 [submodule "sharpSAT"]
 	path = sharpSAT
 	url = git@github.com:agreatnate/sharpSAT.git
+	ignore = dirty
