@@ -1,0 +1,3 @@
+[submodule "sharpSAT"]
+	path = sharpSAT
+	url = https://github.com/FeatJAR/sharpSAT.git
