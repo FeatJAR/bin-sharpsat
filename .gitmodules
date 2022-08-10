@@ -1,6 +1,0 @@
-[submodule "sharpSAT"]
-	path = sharpSAT
-	url = https://github.com/FeatJAR/sharpSAT.git
-[submodule "vcpkg"]
-	path = vcpkg
-	url = https://github.com/Microsoft/vcpkg.git
