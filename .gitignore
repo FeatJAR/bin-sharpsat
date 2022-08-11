@@ -1,3 +1,4 @@
-.project
-target/
-/.settings/
+.gradle
+/build/
+/.project
+/.classpath
