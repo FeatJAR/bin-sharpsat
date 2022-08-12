@@ -4,7 +4,6 @@ import de.featjar.util.bin.Binary;
 import de.featjar.util.bin.OperatingSystem;
 
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Set;
 
 public class SharpSatBinary extends Binary {
@@ -20,10 +19,10 @@ public class SharpSatBinary extends Binary {
     }
 
     @Override
-    public Set<Path> getResourcePaths() {
+    public Set<String> getResourceNames() {
         if (OperatingSystem.IS_WINDOWS)
-            return Set.of(Paths.get("bin/sharpSAT.exe"), Paths.get("bin/gmp-10.dll"));
+            return Set.of("sharpSAT.exe", "gmp-10.dll");
         else
-            return Set.of(Paths.get("bin/sharpSAT"));
+            return Set.of("sharpSAT");
     }
 }
