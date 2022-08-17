@@ -1,3 +1,3 @@
 # bin-sharpsat
 
-Binaries compiled from https://github.com/FeatJAR/sharpSAT
+Binaries compiled from https://github.com/FeatureIDE/sharpSAT
