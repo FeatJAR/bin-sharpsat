@@ -21,22 +21,18 @@
 package de.featjar.bin.sharpsat;
 
 import de.featjar.base.bin.Binary;
-import de.featjar.base.bin.OperatingSystem;
-import java.nio.file.Path;
+import de.featjar.base.bin.HostEnvironment;
+
 import java.util.Set;
 
-public class SharpSatBinary extends Binary {
-    public SharpSatBinary() {}
-
+public class SharpSATBinary extends Binary {
     @Override
-    public Path getPath() {
-        if (OperatingSystem.IS_WINDOWS) return BINARY_DIRECTORY.resolve("sharpSAT.exe");
-        else return BINARY_DIRECTORY.resolve("sharpSAT");
+    public String getExecutableName() {
+        return HostEnvironment.isWindows() ? "sharpSAT.exe" : "sharpSAT";
     }
 
     @Override
     public Set<String> getResourceNames() {
-        if (OperatingSystem.IS_WINDOWS) return Set.of("sharpSAT.exe", "gmp-10.dll");
-        else return Set.of("sharpSAT");
+        return HostEnvironment.isWindows() ? Set.of("sharpSAT.exe", "gmp-10.dll") : Set.of("sharpSAT");
     }
 }
