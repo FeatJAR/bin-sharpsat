@@ -23,9 +23,13 @@ package de.featjar.bin.sharpsat;
 import de.featjar.base.bin.Binary;
 import de.featjar.base.bin.HostEnvironment;
 
+import java.io.IOException;
 import java.util.Set;
 
 public class SharpSATBinary extends Binary {
+    public SharpSATBinary() throws IOException {
+    }
+
     @Override
     public String getExecutableName() {
         return HostEnvironment.isWindows() ? "sharpSAT.exe" : "sharpSAT";
