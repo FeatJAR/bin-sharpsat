@@ -20,8 +20,8 @@
  */
 package de.featjar.bin.sharpsat;
 
-import de.featjar.base.bin.Binary;
-import de.featjar.base.bin.HostEnvironment;
+import de.featjar.base.env.Binary;
+import de.featjar.base.env.HostEnvironment;
 
 import java.io.IOException;
 import java.util.Set;
