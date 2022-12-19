@@ -20,11 +20,12 @@
  */
 package de.featjar.bin.sharpsat;
 
+import de.featjar.base.data.Sets;
 import de.featjar.base.env.Binary;
 import de.featjar.base.env.HostEnvironment;
 
 import java.io.IOException;
-import java.util.Set;
+import java.util.LinkedHashSet;
 
 public class SharpSATBinary extends Binary {
     public SharpSATBinary() throws IOException {
@@ -36,7 +37,7 @@ public class SharpSATBinary extends Binary {
     }
 
     @Override
-    public Set<String> getResourceNames() {
-        return HostEnvironment.isWindows() ? Set.of("sharpSAT.exe", "gmp-10.dll") : Set.of("sharpSAT");
+    public LinkedHashSet<String> getResourceNames() {
+        return HostEnvironment.isWindows() ? Sets.of("sharpSAT.exe", "gmp-10.dll") : Sets.of("sharpSAT");
     }
 }
