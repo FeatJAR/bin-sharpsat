@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2022 Sebastian Krieter, Elias Kuiter
+ * Copyright (C) 2023 Sebastian Krieter, Elias Kuiter
  *
- * This file is part of bin-sharpsat.
+ * This file is part of FeatJAR-bin-sharpsat.
  *
  * bin-sharpsat is free software: you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published by
