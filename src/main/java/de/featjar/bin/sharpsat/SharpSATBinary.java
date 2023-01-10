@@ -23,13 +23,11 @@ package de.featjar.bin.sharpsat;
 import de.featjar.base.data.Sets;
 import de.featjar.base.env.ABinary;
 import de.featjar.base.env.HostEnvironment;
-
 import java.io.IOException;
 import java.util.LinkedHashSet;
 
 public class SharpSATBinary extends ABinary {
-    public SharpSATBinary() throws IOException {
-    }
+    public SharpSATBinary() throws IOException {}
 
     @Override
     public String getExecutableName() {
